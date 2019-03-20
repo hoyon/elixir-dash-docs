@@ -27,9 +27,12 @@ cp dashing.json docs/dashing.json
 sed -i "s/NAME/${package^}/" docs/dashing.json
 sed -i "s/PACKAGE/$package/" docs/dashing.json
 
+python3 remove_sidebar.py
+
 pushd docs || exit
 ~/go/bin/dashing build
 popd || exit
 
 mkdir -p docsets
-mv docs/*.docset docsets
+rm -rf docsets/"$package".docset
+mv docs/"$package".docset docsets

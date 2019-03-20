@@ -36,6 +36,6 @@
   },
   "ignore":[],
   "icon32x32":"logo.png",
-  "allowJS":true,
+  "allowJS":false,
   "ExternalURL":"https://hexdocs.pm/PACKAGE/"
 }
