@@ -1,0 +1,41 @@
+{
+  "name":"NAME",
+  "package":"PACKAGE",
+  "index":"index.html",
+  "selectors":{
+    "title":[
+      {
+        "type":"Module",
+        "regexp":"\\s.*",
+        "replacement":"",
+        "matchpath":"^[A-Z].*\\.html"
+      },
+      {
+        "type":"Guide",
+        "regexp":"\\s–.*",
+        "replacement":"",
+        "matchpath":"^[a-z].*\\.html"
+      }
+    ],
+    "#functions .detail":{
+      "type":"Function",
+      "attr":"id"
+    },
+    "#callbacks .detail":{
+      "type":"Callback",
+      "attr":"id",
+      "regexp":"^c:",
+      "replacement":""
+    },
+    "#types .detail":{
+      "type":"Type",
+      "attr":"id",
+      "regexp":"^t:",
+      "replacement":""
+    }
+  },
+  "ignore":[],
+  "icon32x32":"logo.png",
+  "allowJS":true,
+  "ExternalURL":"https://hexdocs.pm/PACKAGE/"
+}
