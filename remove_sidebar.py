@@ -9,7 +9,7 @@ for file in files:
         markup = file.read()
         soup = BeautifulSoup(markup, "html5lib")
 
-        for tag in soup.select('.sidebar, .sidebar-button'):
+        for tag in soup.select('.sidebar, .sidebar-button, script'):
             tag.decompose()
 
         head = soup.find("head")
