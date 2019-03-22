@@ -5,8 +5,7 @@
   "selectors": {
     "title.modules": {
       "type": "Module",
-      "regexp": "\\s.*",
-      "replacement": ""
+      "attr": "data-mod"
     },
     "title.extras": {
       "type": "Guide",
@@ -15,8 +14,7 @@
     },
     "title.exceptions": {
       "type": "Exception",
-      "regexp": "\\s–.*",
-      "replacement": ""
+      "attr": "data-mod"
     },
     "title.tasks": {
       "type": "Command",
@@ -25,15 +23,15 @@
     },
     "#functions .detail": {
       "type": "Function",
-      "attr": "name"
+      "attr": "data-name"
     },
     "#callbacks .detail": {
       "type": "Callback",
-      "attr": "name"
+      "attr": "data-name"
     },
     "#types .detail": {
       "type": "Type",
-      "attr": "name"
+      "attr": "data-name"
     }
   },
   "ignore": [],

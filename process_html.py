@@ -23,20 +23,22 @@ for filename in files:
         stem = Path(filename).stem
         # names for functions
         for tag in soup.select("#functions .detail"):
-            tag["name"] = stem + "." + tag["id"]
+            tag["data-name"] = stem + "." + tag["id"]
 
         # names for callbacks
         for tag in soup.select("#callbacks .detail"):
-            tag["name"] = stem + "." + tag["id"][2:]
+            tag["data-name"] = stem + "." + tag["id"][2:]
 
         # names for callbacks
         for tag in soup.select("#types .detail"):
-            tag["name"] = stem + "." + tag["id"][2:]
+            tag["data-name"] = stem + "." + tag["id"][2:]
 
         # mark module type
         if soup.body.has_attr("data-type"):
             t = soup.body["data-type"]
-            soup.find("title")["class"] = t
+            title = soup.find("title")
+            title["class"] = t
+            title["data-mod"] = stem
 
         file.seek(0)
         file.write(soup.prettify())
