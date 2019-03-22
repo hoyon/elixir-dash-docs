@@ -30,7 +30,7 @@ sed -i "s/PACKAGE/$package/" docs/dashing.json
 python3 remove_sidebar.py
 
 pushd docs || exit
-~/go/bin/dashing build
+dashing build
 popd || exit
 
 mkdir -p docsets
