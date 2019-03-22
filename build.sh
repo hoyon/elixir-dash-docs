@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eo pipefail
+
 if [ "$#" -ne 1 ]
 then
     echo "package name required"
@@ -31,9 +33,9 @@ sed -i "s/PACKAGE/$package/" docs/dashing.json
 
 python3 process_html.py
 
-pushd docs || exit
+pushd docs
 dashing build
-popd || exit
+popd
 
 mkdir -p docsets
 rm -rf docsets/"$package".docset
