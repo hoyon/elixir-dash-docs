@@ -24,10 +24,12 @@ rm docs.tar.gz
 cp logo.png docs/logo.png
 cp dashing.json docs/dashing.json
 
+rm docs/404.html
+
 sed -i "s/NAME/${package^}/" docs/dashing.json
 sed -i "s/PACKAGE/$package/" docs/dashing.json
 
-python3 remove_sidebar.py
+python3 process_html.py
 
 pushd docs || exit
 dashing build

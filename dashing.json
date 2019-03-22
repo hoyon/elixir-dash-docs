@@ -1,41 +1,43 @@
 {
-  "name":"NAME",
-  "package":"PACKAGE",
-  "index":"index.html",
-  "selectors":{
-    "title":[
-      {
-        "type":"Module",
-        "regexp":"\\s.*",
-        "replacement":"",
-        "matchpath":"^[A-Z].*\\.html"
-      },
-      {
-        "type":"Guide",
-        "regexp":"\\s–.*",
-        "replacement":"",
-        "matchpath":"^[a-z].*\\.html"
-      }
-    ],
-    "#functions .detail":{
-      "type":"Function",
-      "attr":"id"
+  "name": "NAME",
+  "package": "PACKAGE",
+  "index": "index.html",
+  "selectors": {
+    "title.modules": {
+      "type": "Module",
+      "regexp": "\\s.*",
+      "replacement": ""
     },
-    "#callbacks .detail":{
-      "type":"Callback",
-      "attr":"id",
-      "regexp":"^c:",
-      "replacement":""
+    "title.extras": {
+      "type": "Guide",
+      "regexp": "\\s–.*",
+      "replacement": ""
     },
-    "#types .detail":{
-      "type":"Type",
-      "attr":"id",
-      "regexp":"^t:",
-      "replacement":""
+    "title.exceptions": {
+      "type": "Exception",
+      "regexp": "\\s–.*",
+      "replacement": ""
+    },
+    "title.tasks": {
+      "type": "Command",
+      "regexp": "\\s–.*",
+      "replacement": ""
+    },
+    "#functions .detail": {
+      "type": "Function",
+      "attr": "name"
+    },
+    "#callbacks .detail": {
+      "type": "Callback",
+      "attr": "name"
+    },
+    "#types .detail": {
+      "type": "Type",
+      "attr": "name"
     }
   },
-  "ignore":[],
-  "icon32x32":"logo.png",
-  "allowJS":false,
-  "ExternalURL":"https://hexdocs.pm/PACKAGE/"
+  "ignore": [],
+  "icon32x32": "logo.png",
+  "allowJS": false,
+  "ExternalURL": "https://hexdocs.pm/PACKAGE/"
 }
